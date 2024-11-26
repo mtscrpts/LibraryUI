@@ -1,0 +1,31 @@
+<div class="bg-white">
+    <div class="pt-6">
+
+  
+      <!-- Image gallery -->
+      <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+        <img [src]=getSantizeUrl(book.cover) alt="Two each of gray, white, and black shirts laying flat." class=" aspect-[3/4] size-full rounded-lg object-cover lg:block">
+        <div class=" lg:grid lg:grid-cols-1 lg:gap-y-8">
+            <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
+                <h2 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{{book.title}}</h2>
+                <h3 class="text-sm font-medium text-gray-900">Author: {{book.author}}</h3>
+                <h3 class="text-sm font-medium text-gray-900">PHP{{book.price}}</h3>
+            </div>
+            <div class="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
+                <!-- Description and details -->
+                <div>
+                  <h3 class="sr-only">Description</h3>
+        
+                  <div class="space-y-6">
+                    <p class="text-base text-gray-900">{{book.description}}</p>
+                  </div>
+                </div>
+        
+                
+            </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  
