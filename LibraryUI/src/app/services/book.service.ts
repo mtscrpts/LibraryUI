@@ -18,7 +18,7 @@ export class BookService {
         return this.http.get<any>(GET_BOOK_BY_ID(id));
     }
 
-    addBook(body: Book): Observable<any> {
+    addBook(body: any): Observable<any> {
         return this.http.post<any>(ADD_BOOK, body);
     }
 

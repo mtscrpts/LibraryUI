@@ -7,7 +7,10 @@ import { ListCategoriesComponent } from './categories/list-categories/list-categ
 import { HttpClientModule } from '@angular/common/http';
 import { ListBooksComponent } from './books/list-books/list-books.component';
 import { BookDetailsComponent } from './books/book-details/book-details.component';
-import { EditCategoryComponent } from './categories/edit-category/edit-category.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddBookComponent } from './books/add-book/add-book.component';
+import { CategoryDetailsComponent } from './categories/category-details/category-details.component';
+import { AddCategoryComponent } from './categories/add-category/add-category.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,16 @@ import { EditCategoryComponent } from './categories/edit-category/edit-category.
     ListCategoriesComponent,
     ListBooksComponent,
     BookDetailsComponent,
-    EditCategoryComponent
+    AddBookComponent,
+    CategoryDetailsComponent,
+    AddCategoryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

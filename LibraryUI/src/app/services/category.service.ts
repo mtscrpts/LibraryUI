@@ -18,7 +18,7 @@ export class CategoryService {
         return this.http.get<any>(GET_CATEGORY_BY_ID(id));
     }
 
-    addCategory(body: Category): Observable<any> {
+    addCategory(body: any): Observable<any> {
         return this.http.post<any>(ADD_CATEGORY, body);
     }
 

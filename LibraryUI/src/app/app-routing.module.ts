@@ -4,6 +4,9 @@ import { ListCategoriesComponent } from './categories/list-categories/list-categ
 import { ListBooksComponent } from './books/list-books/list-books.component';
 import { BookDetailsComponent } from './books/book-details/book-details.component';
 import { Resolvers } from './resolvers';
+import { AddBookComponent } from './books/add-book/add-book.component';
+import { AddCategoryComponent } from './categories/add-category/add-category.component';
+import { CategoryDetailsComponent } from './categories/category-details/category-details.component';
 
 const routes: Routes = [
   {
@@ -11,8 +14,23 @@ const routes: Routes = [
     component: ListCategoriesComponent
   },
   {
+    path: 'categories/add',
+    component: AddCategoryComponent
+  },
+  {
+    path: 'categories/:id',
+    component: CategoryDetailsComponent,
+    resolve: {
+      category: Resolvers.CategoryResolverService,
+    }
+  },
+  {
     path: 'books',
     component: ListBooksComponent
+  },
+  {
+    path: 'books/add',
+    component: AddBookComponent
   },
   {
     path: 'books/:id',
