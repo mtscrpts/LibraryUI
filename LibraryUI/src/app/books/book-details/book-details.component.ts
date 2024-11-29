@@ -61,13 +61,14 @@ export class BookDetailsComponent implements OnInit {
     this.book = this.form.value;
     this.bookService.updateBook(this.book.bookId, this.book).subscribe(json => {
       this.router.navigate(['/', 'books', this.book.bookId]);
-      window.alert('The changes has been saved!')
+      window.alert('The changes has been saved!');
     });
   }
 
   onDelete(): void {
     this.bookService.deleteBook(this.book.bookId).subscribe(json => {
       this.router.navigate(['/', 'books']);
+      window.alert('The book has been deleted!');
     });
   }
 }

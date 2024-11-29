@@ -42,13 +42,14 @@ export class CategoryDetailsComponent {
     this.category = this.form.value;
     this.categoryService.updateCategory(this.category.categoryId, this.category).subscribe(json => {
       this.router.navigate(['/', 'categories', this.category.categoryId]);
-      window.alert('The changes has been saved!')
+      window.alert('The changes has been saved!');
     });
   }
 
   onDelete(): void {
     this.categoryService.deleteCategory(this.category.categoryId).subscribe(json => {
       this.router.navigate(['/', 'categories']);
+      window.alert('The category has been deleted!');
     });
   }
 }
