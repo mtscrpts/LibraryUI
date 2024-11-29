@@ -35,7 +35,8 @@ export class LoginComponent {
   private login(): void {
       this.authService.login(this.form.value)
       .subscribe(
-          token => this.onLoginSuccess(token)
+          token => this.onLoginSuccess(token),
+          errorResponse => window.alert(errorResponse.error.error)
       );
   }
 
