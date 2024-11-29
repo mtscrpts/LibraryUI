@@ -14,7 +14,7 @@ export class CategoryResolverService {
 
   resolve(
     route: ActivatedRouteSnapshot
-  ): Observable<any> | Promise<any> | any {
+  ): Observable<any> {
     const id = route.params['id'];
     return this.categoryService.getCategoryById(id);
   }

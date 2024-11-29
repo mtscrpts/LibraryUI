@@ -25,11 +25,12 @@ export class CategoryDetailsComponent {
     private route: ActivatedRoute,
     private router: Router,
     private categoryService: CategoryService,
-  ) {}
+  ) {
+    this.category = route.snapshot.data['category'];
+  }
 
   ngOnInit(): void {
     this.route.data.subscribe(data => {
-      console.log(data);
       this.category = data['category'];
       this.form.get('categoryId')?.setValue(this.category.categoryId);
       this.form.get('name')?.setValue(this.category.name);
@@ -40,8 +41,7 @@ export class CategoryDetailsComponent {
   onSubmit(): void {
     this.category = this.form.value;
     this.categoryService.updateCategory(this.category.categoryId, this.category).subscribe(json => {
-      console.log(json);
-      window.location.reload();
+      this.router.navigate(['/', 'categories', this.category.categoryId]);
       window.alert('The changes has been saved!')
     });
   }

@@ -11,6 +11,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddBookComponent } from './books/add-book/add-book.component';
 import { CategoryDetailsComponent } from './categories/category-details/category-details.component';
 import { AddCategoryComponent } from './categories/add-category/add-category.component';
+import { LoginComponent } from './authentication/login/login.component';
+import { HttpInterceptorProviders } from './interceptors';
+import { UserState } from './ngxs/states/user.state';
+import { NgxsModule } from '@ngxs/store';
+import { HomeComponent } from './home/home/home.component';
+import { CategoryResolverService } from './resolvers/category-resolver';
+import { BookResolverService } from './resolvers/book-resolver.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +27,9 @@ import { AddCategoryComponent } from './categories/add-category/add-category.com
     BookDetailsComponent,
     AddBookComponent,
     CategoryDetailsComponent,
-    AddCategoryComponent
+    AddCategoryComponent,
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -28,8 +37,15 @@ import { AddCategoryComponent } from './categories/add-category/add-category.com
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxsModule.forRoot([
+      UserState
+    ], {
+        
+    }),
   ],
-  providers: [],
+  providers: [
+    HttpInterceptorProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

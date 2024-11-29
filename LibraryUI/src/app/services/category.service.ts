@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { ADD_CATEGORY, DELETE_CATEGORY_BY_ID, GET_CATEGORIES, GET_CATEGORY_BY_ID, UPDATE_CATEGORY } from "../../api";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Category } from "../models/category";
 
@@ -15,6 +15,8 @@ export class CategoryService {
     }
 
     getCategoryById(id: number): Observable<any> {
+        // const headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'));
+        // return this.http.get<any>(GET_CATEGORY_BY_ID(id), { headers: headers });
         return this.http.get<any>(GET_CATEGORY_BY_ID(id));
     }
 

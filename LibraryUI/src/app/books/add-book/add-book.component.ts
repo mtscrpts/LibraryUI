@@ -37,10 +37,8 @@ export class AddBookComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.form.value);
     this.book = this.form.value;
     this.bookService.addBook(this.form.value).subscribe(json => {
-      console.log(json);
       this.router.navigate(['/', 'books']);
       window.alert('The book has been added!')
     });

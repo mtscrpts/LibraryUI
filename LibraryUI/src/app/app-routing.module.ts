@@ -7,8 +7,18 @@ import { Resolvers } from './resolvers';
 import { AddBookComponent } from './books/add-book/add-book.component';
 import { AddCategoryComponent } from './categories/add-category/add-category.component';
 import { CategoryDetailsComponent } from './categories/category-details/category-details.component';
+import { LoginComponent } from './authentication/login/login.component';
+import { HomeComponent } from './home/home/home.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
   {
     path: 'categories',
     component: ListCategoriesComponent

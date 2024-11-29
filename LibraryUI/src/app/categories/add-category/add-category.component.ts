@@ -29,9 +29,7 @@ export class AddCategoryComponent {
   }
 
   onSubmit(): void {
-    console.log(this.form.value);
     this.categoryService.addCategory(this.form.value).subscribe(json => {
-      console.log(json);
       this.router.navigate(['/', 'categories']);
       window.alert('The category has been added!')
     });

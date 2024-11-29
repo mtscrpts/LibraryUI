@@ -43,7 +43,6 @@ export class BookDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe(data => {
-      console.log(data['book']);
       this.book = data['book'];
       this.form.get('bookId')?.setValue(this.book.bookId);
       this.form.get('categoryId')?.setValue(this.book.categoryId);
@@ -59,17 +58,14 @@ export class BookDetailsComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.form.value);
     this.book = this.form.value;
     this.bookService.updateBook(this.book.bookId, this.book).subscribe(json => {
-      console.log(json);
-      window.location.reload();
+      this.router.navigate(['/', 'books', this.book.bookId]);
       window.alert('The changes has been saved!')
     });
   }
 
   onDelete(): void {
-    console.log(this.book.bookId);
     this.bookService.deleteBook(this.book.bookId).subscribe(json => {
       this.router.navigate(['/', 'books']);
     });

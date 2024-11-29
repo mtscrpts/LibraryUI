@@ -11,3 +11,6 @@ export const ADD_BOOK = `${BASE_URL}/books`;
 export const UPDATE_BOOK = (id: number) => `${BASE_URL}/books/${id}`;
 export const GET_BOOK_BY_ID = (id: number) => `${BASE_URL}/books/${id}`;
 export const DELETE_BOOK_BY_ID = (id: number) => `${BASE_URL}/books/${id}`;
+
+export const LOGIN = `${BASE_URL}/login`;
+export const GET_USER_NAME = `${BASE_URL}/user/name`;

@@ -14,7 +14,7 @@ export class BookResolverService {
 
   resolve(
     route: ActivatedRouteSnapshot
-  ): Observable<any> | Promise<any> | any {
+  ): Observable<any> {
     const id = route.params['id'];
     return this.bookService.getBookById(id);
   }

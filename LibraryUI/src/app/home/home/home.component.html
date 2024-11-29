@@ -1,0 +1,16 @@
+
+
+<div style="padding: 5rem;" class="container">
+    <div class="grid grid-rows-2 grid-flow-col gap-2">
+        <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 flex justify-center">
+            <h1 class="text-3xl font-bold tracking-tight text-gray-900">Welcome to our Library!</h1>
+        </div>
+        <div style="width: 30rem; margin: auto; align-content: center;">
+            <img style="max-width: 20%;" class="mx-auto h-10" src="./assets/logo/logo.svg">
+        </div>
+        <div class="mt-6 flex items-center justify-center gap-x-6">
+            <button [routerLink]="['/categories']" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Browse Categories</button>
+            <button [routerLink]="['/books']" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Browse Books</button>
+        </div>
+    </div>
+</div>
